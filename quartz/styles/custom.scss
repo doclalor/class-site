@@ -1,3 +1,56 @@
 @use "./base.scss";
-
 // put your custom CSS here!
+
+h1 {
+  text-align: right;
+}
+
+h1:nth-of-type(1) {
+  margin-bottom: 0;
+}
+
+h1:nth-of-type(2) {
+  margin-top: 0;
+  color: #2d6a4f;
+}
+
+h1:nth-of-type(2) em {
+  color: #2b2b2b;
+}
+
+a.internal {
+  background-color: var(--highlight);
+  border-radius: 4px;
+  padding: 2px 6px;
+  text-decoration: none;
+}
+
+a.internal:hover {
+  background-color: var(--lightgray);
+}
+
+ol ol {
+  list-style-type: lower-alpha;
+}
+
+// Contact card with course icon
+.contact-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0 2rem 0;
+  background-color: var(--highlight);
+}
+
+.course-icon {
+  width: 4rem;
+  opacity: 0.4;
+  flex-shrink: 0;
+}
+
+.contact-info p {
+  margin: 0.3rem 0;
+}
