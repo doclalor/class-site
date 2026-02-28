@@ -1,6 +1,15 @@
 @use "./base.scss";
+// put your custom CSS here!
 
-// ─── Headings ───
+html {
+  scroll-padding-top: 0;
+}
+
+#quartz-root, #quartz-body {
+  scroll-margin-top: 0;
+  scroll-padding-top: 0;
+}
+
 h1 {
   text-align: right;
 }
@@ -18,7 +27,6 @@ h1:nth-of-type(2) em {
   color: #2b2b2b;
 }
 
-// ─── Links ───
 a {
   color: #2d6a4f;
 }
@@ -38,19 +46,18 @@ a.internal:hover {
   background-color: var(--lightgray);
 }
 
-// ─── Lists ───
 ol ol {
   list-style-type: lower-alpha;
 }
 
-// ─── Images ───
+// Image styling
 article img {
   border: 1px solid var(--lightgray);
   border-radius: 4px;
   padding: 4px;
 }
 
-// ─── Contact card ───
+// Contact card with course icon
 .contact-card {
   display: flex;
   align-items: flex-start;
@@ -76,11 +83,42 @@ article img {
   margin: 0.3rem 0;
 }
 
-// ─── Hide generated title and meta ───
+// Hide clutter 
+
 .article-title,
 .content-meta {
-  height: 0;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+  display: none;
+}
+
+/* 1. Kill the header and any spacing it creates */
+.article-header, 
+header.page-header,
+.breadcrumb-container {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 0 !important;
+  min-height: 0 !important;
+}
+
+
+/* 2. Flatten the article container */
+article, 
+.center, 
+#quartz-body {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* 3. Target the 'aligner' - Quartz uses this to center content, 
+   it often has its own top padding */
+.center > .aligner {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* 4. Ensure your H1 (or first element) has zero top margin */
+article > :first-child,
+article > .aligner > :first-child {
+  margin-top: 0 !important;
 }
